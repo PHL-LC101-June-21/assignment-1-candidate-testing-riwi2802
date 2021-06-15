@@ -6,7 +6,7 @@ const input = require('readline-sync');
 let candidateName = " ";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space?";
-let correctAnswer = "Sally Ride";
+let correctAnswer = "sally ride";
 let candidateAnswer = " ";
 let questions;
 let correctAnswers;
@@ -22,13 +22,13 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   let candidateAnswer = input.question("Who was the first American woman in space? : ")
-    if (candidateAnswer === correctAnswer ) {
+    if (candidateAnswer.toLowerCase() === correctAnswer ) {
       console.log("Congrats! This is correct.")
     } else {
         console.log("Sorry. This is not correct. The correct answer was Sally Ride.");
       }
 }
-//sally ride is not correct but Sally Ride is, how to i change this R
+\
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
