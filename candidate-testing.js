@@ -29,7 +29,6 @@ function askQuestion() {
 
 
 
-
 let i = 0;
 
 for (let i = 0; i < questions.length; i++) { 
@@ -39,6 +38,13 @@ for (let i = 0; i < questions.length; i++) {
   console.log(`You responded with ${candidateAnswers[i]} for question number ${questionNumber[i]}`)
 }
 
+
+ 
+
+function gradeQuiz(candidateAnswers) {
+
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+
 for (let j = 0; j <= 4 ; j++)
 {
   if (candidateAnswers[j].toLowerCase() === correctAnswers[j]) 
@@ -47,14 +53,6 @@ for (let j = 0; j <= 4 ; j++)
   }
 }
 
-
-let t = 0
-
-function gradeQuiz(numberOfCorrectAnswers) {
-
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
-
   let grade = numberOfCorrectAnswers / 5 * 100
   
  console.log(grade)
@@ -62,7 +60,7 @@ function gradeQuiz(numberOfCorrectAnswers) {
  
 }
 
-console.log("You scored " + gradeQuiz(numberOfCorrectAnswers) + " percent")
+console.log("You scored " + gradeQuiz(candidateAnswers) + " percent")
 
 if (numberOfCorrectAnswers >= 4) {
       console.log("Congrats! you're going to space!")
@@ -71,16 +69,17 @@ if (numberOfCorrectAnswers >= 4) {
       }
 
 
-
-
-function runProgram() {
-  askForName();
-  // TODO 1.1c: Ask for candidate's name //
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
  let candidateName = input.question("What is your name? : ")
  console.log("Hello ", candidateName, "!")
 };
+
+
+function runProgram() {
+  askForName();
+  // TODO 1.1c: Ask for candidate's name //
+
 
 
 
