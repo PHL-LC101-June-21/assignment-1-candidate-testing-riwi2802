@@ -13,7 +13,9 @@ let questions = ["Who was the first American Woman in space? : ", "True or false
 let correctAnswers = ["sally ride", "true", "40", "trajectory", "3"];
 let candidateAnswers = [];
 let questionNumber = [1, 2, 3, 4, 5]
-
+let numberOfCorrectAnswers = 0
+let grade 
+let j
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
@@ -28,9 +30,6 @@ function askQuestion() {
 
 
 
-
-
-
 let i = 0;
 
 for (let i = 0; i < questions.length; i++) { 
@@ -40,19 +39,36 @@ for (let i = 0; i < questions.length; i++) {
   console.log(`You responded with ${candidateAnswers[i]} for question number ${questionNumber[i]}`)
 }
 
+for (let j = 0; j <= 4 ; j++)
+{
+  if (candidateAnswers[j].toLowerCase() === correctAnswers[j]) 
+  {
+    numberOfCorrectAnswers++
+  }
+}
 
-function gradeQuiz(candidateAnswers) {
+
+let t = 0
+
+function gradeQuiz(numberOfCorrectAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
 
-  let grade;
+  let grade = numberOfCorrectAnswers / 5 * 100
   
-
+ console.log(grade)
   return grade;
+ 
 }
 
+console.log("You scored " + gradeQuiz(numberOfCorrectAnswers) + " percent")
 
+if (numberOfCorrectAnswers >= 4) {
+      console.log("Congrats! you're going to space!")
+    } else {
+        console.log("Sorry, you failed")
+      }
 
 
 
@@ -60,7 +76,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  function askForName() {
+function askForName() {
   // TODO 1.1b: Ask for candidate's name //
  let candidateName = input.question("What is your name? : ")
  console.log("Hello ", candidateName, "!")
@@ -69,7 +85,6 @@ function runProgram() {
 
 
   //askQuestion();
-  gradeQuiz(this.candidateAnswers);
 }
 
 // Don't write any code below this line //
